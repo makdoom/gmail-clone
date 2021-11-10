@@ -1,10 +1,12 @@
 import React from "react";
 // import { Counter } from "./features/counter/Counter";
-import "./App.css";
+import "./app.css";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
+      <Header />
       <h1>Lets build gmail clone</h1>
     </div>
   );
