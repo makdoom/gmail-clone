@@ -2,12 +2,13 @@ import React from "react";
 // import { Counter } from "./features/counter/Counter";
 import "./app.css";
 import Header from "./components/Header/Header";
+import Sidebar from "./components/SIdebar/Sidebar";
 
 function App() {
   return (
     <div className="app">
       <Header />
-      <h1>Lets build gmail clone</h1>
+      <Sidebar />
     </div>
   );
 }
