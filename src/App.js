@@ -2,7 +2,7 @@ import React from "react";
 // import { Counter } from "./features/counter/Counter";
 import "./app.css";
 import Header from "./components/Header/Header";
-import Sidebar from "./components/SIdebar/Sidebar";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
   return (
