@@ -2,13 +2,13 @@ import React from "react";
 // import { Counter } from "./features/counter/Counter";
 import "./app.css";
 import Header from "./components/Header/Header";
-import Sidebar from "./components/Sidebar/Sidebar";
+import Main from "./components/Main/Main";
 
 function App() {
   return (
     <div className="app">
       <Header />
-      <Sidebar />
+      <Main />
     </div>
   );
 }

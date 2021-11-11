@@ -1,7 +1,12 @@
 import React from "react";
-import InboxIcon from "@material-ui/icons/Inbox";
 import "./sidebar.css";
 import SidebarOption from "../SidebarOption/SidebarOption";
+import { SidebarItemsOptions, MeetItems } from "../sidebarItems";
+import SidebarMeet from "../SidebarMeet/SidebarMeet";
+import { Avatar } from "@material-ui/core";
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+import AddIcon from "@material-ui/icons/Add";
+import PersonIcon from "@material-ui/icons/Person";
 
 const Sidebar = () => {
   return (
@@ -12,20 +17,40 @@ const Sidebar = () => {
           Compose
         </button>
       </div>
-      <div className="sidebar__middle">
-        <div className="middle__top">
+      <div className="sidebar__options">
+        {SidebarItemsOptions.map((item, index) => (
           <SidebarOption
-            Icon={InboxIcon}
-            title="Inbox"
-            number={54}
-            selected={true}
+            key={index}
+            Icon={item.icon}
+            title={item.title}
+            number={item.numbers && item.numbers}
+            isActive={item.active && item.active}
           />
-          <SidebarOption Icon={InboxIcon} title="Inbox" number={54} />
-          <SidebarOption Icon={InboxIcon} title="Inbox" number={54} />
-        </div>
-        <div className="middle__bottom"></div>
+        ))}
       </div>
-      <div className="sidebar__bottom"></div>
+      <div className="sidebar__meet__options">
+        <p className="meet__title">Meet</p>
+        {MeetItems.map((item) => (
+          <SidebarMeet Icon={item.icon} title={item.title} />
+        ))}
+      </div>
+      <div className="sidebar__hangout">
+        <p className="hangout__title">Hangouts</p>
+        <div className="avatar__container">
+          <Avatar className="avatar__icon" />
+          <span>
+            Makdoom Shaikh <ArrowDropDownIcon className="icon" />
+          </span>
+          <AddIcon className="icon" />
+        </div>
+      </div>
+      <div className="sidebar__bottom_options">
+        <PersonIcon />
+        <img
+          src="https://www.gstatic.com/images/icons/material/system/1x/hangout_black_20dp.png"
+          alt=""
+        />
+      </div>
     </div>
   );
 };

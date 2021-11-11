@@ -1,9 +1,8 @@
 .sidebar {
-  border: 1px solid #000;
   height: calc(100vh - 65px);
   display: flex;
   flex-direction: column;
-  width: 255px;
+  position: relative;
 }
 .sidebar__compose {
   text-transform: capitalize !important;
@@ -22,4 +21,52 @@
 .sidebar__compose img {
   width: 25px;
   margin-right: 0.4rem;
+}
+.sidebar__options,
+.sidebar__meet__options,
+.sidebar__hangout {
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 5px;
+}
+.sidebar__meet__options .meet__title,
+.sidebar__hangout .hangout__title {
+  padding: 15px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+}
+.sidebar__hangout .avatar__container {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+.sidebar__hangout .avatar__container .icon {
+  color: #818181;
+}
+.sidebar__hangout .avatar__container .MuiAvatar-circular {
+  height: 35px;
+  width: 35px;
+}
+.sidebar__hangout .avatar__container span {
+  display: flex;
+  align-items: center;
+  font-size: 0.86rem;
+  margin-left: 0.4rem;
+  color: #3f3f3f;
+  flex: 1;
+}
+.sidebar__bottom_options {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #eeeeee;
+  padding-top: 5px;
+}
+
+.sidebar__bottom_options img {
+  margin-left: 1rem;
 }

@@ -1,0 +1,23 @@
+.sidebar__meet_container > a {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  height: 35px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  color: #818181;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.sidebar__meet .icon {
+  font-size: 1.3rem;
+}
+.sidebar__meet .title {
+  flex: 1;
+  color: #3f3f3f;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+}
+.sidebar__meet:hover {
+  background: #e4e4e4;
+}
