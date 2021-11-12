@@ -15,9 +15,19 @@
 .emailRow:hover .emailRow__options .star--icon {
   color: #5f6368;
 }
+.emailRow:hover .emailRow__options .star--icon.Mui-checked {
+  color: #f7ca4b;
+}
+.emailRow__options .star--icon.Mui-checked {
+  color: #f7ca4b;
+}
 .emailRow:hover .emailRow__action {
   visibility: visible;
   right: 0px;
+}
+.emailRow .email__info {
+  display: flex;
+  width: 100%;
 }
 .emailRow__options {
   display: flex;

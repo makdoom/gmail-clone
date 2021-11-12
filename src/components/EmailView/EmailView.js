@@ -86,7 +86,6 @@ const EmailView = () => {
           time="Nov 10"
         />
       </div>
-      <h1>lets build Gmail ...🚀 🚀</h1>
     </div>
   );
 };

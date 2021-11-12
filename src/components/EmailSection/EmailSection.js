@@ -1,4 +1,3 @@
-import { Button, IconButton } from "@material-ui/core";
 import React from "react";
 import "./emailSection.css";
 
