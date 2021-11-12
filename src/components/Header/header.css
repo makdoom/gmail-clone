@@ -4,9 +4,10 @@
   border-bottom: 1px solid whitesmoke;
   width: 100%;
   max-width: 100%;
-  padding: 8px 13px;
+  padding: 8px 20px;
   min-height: 64px;
   flex-wrap: nowrap;
+  width: 100%;
 }
 .header .MuiIconButton-root {
   height: 40px;

@@ -1,4 +1,7 @@
 .main__container {
+  width: 100%;
+  max-width: 100%;
+  height: calc(100vh - 65px);
   display: grid;
-  grid-template-columns: 260px auto 50px;
+  grid-template-columns: 255px auto 70px;
 }

@@ -1,5 +1,6 @@
 .sidebar {
-  height: calc(100vh - 65px);
+  height: 100%;
+  width: 260px;
   display: flex;
   flex-direction: column;
   position: relative;
