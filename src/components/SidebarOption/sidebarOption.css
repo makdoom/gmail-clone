@@ -22,9 +22,12 @@
   font-size: 0.9rem;
 }
 .sidebar__option.active {
-  color: #d93227;
   background: #fce8e6;
+  color: #d93227;
   font-weight: 500;
+}
+.sidebar__option.active p {
+  color: #d93227;
 }
 .sidebar__option.active:hover {
   background: #fce8e6;

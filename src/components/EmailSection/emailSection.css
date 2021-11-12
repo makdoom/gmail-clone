@@ -1,0 +1,27 @@
+.section {
+  display: flex;
+  align-items: center;
+  padding: 15px 10px;
+  cursor: pointer;
+  min-width: 250px;
+  text-transform: capitalize;
+  border-width: 0 !important;
+  color: #818181;
+}
+.section--selected {
+  background: whitesmoke;
+  border-width: 3px !important;
+}
+
+.section--selected p {
+  font-weight: 500;
+}
+.section:hover {
+  background: whitesmoke;
+  border-width: 3px !important;
+}
+.section > p {
+  margin-left: 1.3rem;
+  font-size: 0.88rem;
+  letter-spacing: 0.6px;
+}

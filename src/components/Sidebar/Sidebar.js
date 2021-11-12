@@ -30,8 +30,8 @@ const Sidebar = () => {
       </div>
       <div className="sidebar__meet__options">
         <p className="meet__title">Meet</p>
-        {MeetItems.map((item) => (
-          <SidebarMeet Icon={item.icon} title={item.title} />
+        {MeetItems.map((item, index) => (
+          <SidebarMeet key={index} Icon={item.icon} title={item.title} />
         ))}
       </div>
       <div className="sidebar__hangout">

@@ -1,4 +1,24 @@
 .email__view__container {
-  text-align: center;
-  margin-top: 3rem;
+  /* overflow: scroll; */
+  padding-left: 20px;
+}
+.email__view__container .emailList__settings {
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid whitesmoke;
+  background: #fff;
+  z-index: 999;
+  padding-right: 10px;
+}
+.email__settingLeft .icon {
+  font-size: 20px;
+}
+.emailList__sections {
+  display: flex;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid whitesmoke;
 }

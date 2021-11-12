@@ -2,7 +2,6 @@ import React from "react";
 import "./sidebarOption.css";
 
 const SidebarOption = ({ Icon, number, title, isActive }) => {
-  console.log(isActive);
   return (
     <div className="sidebar__option_container">
       <a className={`sidebar__option ${isActive && "active"}`} href="/">
