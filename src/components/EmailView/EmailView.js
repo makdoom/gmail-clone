@@ -11,6 +11,7 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import KeyboardHideIcon from "@material-ui/icons/KeyboardHide";
 import EmailSection from "../EmailSection/EmailSection";
+import EmailRow from "../EmailRow/EmailRow";
 
 const EmailView = () => {
   const emailSections = [
@@ -70,6 +71,20 @@ const EmailView = () => {
             isSelected={item.isSelected}
           />
         ))}
+      </div>
+      <div className="emailList__area">
+        <EmailRow
+          title="First Mail"
+          subject="Testing mail"
+          description="This is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first email"
+          time="Nov 10"
+        />
+        <EmailRow
+          title="First Mail"
+          subject="Testing mail"
+          description="This is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first email"
+          time="Nov 10"
+        />
       </div>
       <h1>lets build Gmail ...🚀 🚀</h1>
     </div>

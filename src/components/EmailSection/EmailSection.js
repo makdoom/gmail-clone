@@ -11,7 +11,7 @@ const EmailSection = ({ Icon, title, color, isSelected }) => {
         color: `${isSelected && color}`,
       }}
     >
-      <Icon />
+      <Icon fontSize="small" />
       <p>{title}</p>
     </div>
   );

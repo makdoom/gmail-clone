@@ -3,6 +3,9 @@
   flex-direction: column;
   align-items: center;
   border-left: 1px solid whitesmoke;
+  z-index: 999;
+  background: #fff;
+  position: relative;
 }
 .sideicon__container .icon-btn {
   margin-bottom: 1rem;
