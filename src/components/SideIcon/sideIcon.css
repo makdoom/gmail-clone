@@ -1,3 +1,16 @@
 .sideicon__container {
-  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 1px solid whitesmoke;
+}
+.sideicon__container .icon-btn {
+  margin-bottom: 1rem;
+}
+.sideicon__container > div {
+  border-top: 1px solid #e4e4e4;
+  padding-top: 1rem;
+}
+.sideicon__container img {
+  width: 20px;
 }

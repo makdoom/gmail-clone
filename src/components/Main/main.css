@@ -3,5 +3,5 @@
   max-width: 100%;
   height: calc(100vh - 65px);
   display: grid;
-  grid-template-columns: 255px auto 70px;
+  grid-template-columns: 255px auto 60px;
 }
