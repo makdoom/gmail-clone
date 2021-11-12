@@ -1,0 +1,69 @@
+.mail {
+  flex: 1;
+}
+.mail__tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid whitesmoke;
+  padding: 5px 10px;
+}
+.mail__body {
+  height: 85vh;
+  overflow: auto;
+}
+.mailBody__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mailBody__header .mail__subject {
+  padding: 20px 0 10px 80px;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+}
+.mailBody__profile {
+  height: auto;
+  overflow: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mailBody__profile .profile__left {
+  display: flex;
+  flex: 1;
+  margin: 1rem 0 0 1.6rem;
+}
+.mailBody__profile .profile__left .profile__info {
+  margin-left: 1rem;
+}
+.profile__left .profile__info .sender__email {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.profile__left .profile__info .sender__email span {
+  color: #5f6368;
+  font-weight: normal;
+}
+.profile__info > span {
+  display: flex;
+  align-items: center;
+  color: #5f6368;
+  font-size: 0.85rem;
+}
+.profile__right {
+  display: flex;
+  align-items: center;
+}
+.profile__right > p {
+  font-size: 0.8rem;
+  color: #5f6368;
+  margin-right: 0.5rem;
+}
+.profile__right .star--icon.Mui-checked {
+  color: #f7ca4b;
+}
+.mail__message {
+  padding: 2rem 4rem 2rem 5rem;
+  text-align: justify;
+}

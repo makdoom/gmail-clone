@@ -15,6 +15,9 @@
 .emailRow:hover .emailRow__options .star--icon {
   color: #5f6368;
 }
+.emailRow__options .check--box.Mui-checked {
+  color: #5f6368 !important;
+}
 .emailRow:hover .emailRow__options .star--icon.Mui-checked {
   color: #f7ca4b;
 }

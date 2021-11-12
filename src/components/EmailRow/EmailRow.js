@@ -1,11 +1,11 @@
 import React from "react";
 import "./emailRow.css";
 import { Checkbox, IconButton } from "@material-ui/core";
-import StarOutlineIcon from "@material-ui/icons/StarOutline";
 import WatchLaterIcon from "@material-ui/icons/WatchLater";
 import DraftsIcon from "@material-ui/icons/Drafts";
 import ArchiveIcon from "@material-ui/icons/Archive";
 import DeleteIcon from "@material-ui/icons/Delete";
+import StarOutlineIcon from "@material-ui/icons/StarOutline";
 import StarIcon from "@material-ui/icons/Star";
 
 import { useNavigate } from "react-router-dom";
@@ -15,7 +15,7 @@ const EmailRow = ({ id, title, subject, description, time }) => {
   return (
     <div className="emailRow">
       <div className="emailRow__options">
-        <Checkbox />
+        <Checkbox size="small" className="check--box" />
         <Checkbox
           className="star--icon"
           size="small"

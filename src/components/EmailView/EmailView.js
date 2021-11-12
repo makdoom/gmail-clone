@@ -38,7 +38,7 @@ const EmailView = () => {
     <div className="email__view__container">
       <div className="emailList__settings">
         <div className="email__settingLeft">
-          <Checkbox size="small" />
+          <Checkbox size="small" className="check--box" />
           <IconButton>
             <ArrowDropDownIcon fontSize="small" />
           </IconButton>

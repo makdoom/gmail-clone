@@ -15,6 +15,9 @@
 .email__settingLeft .icon {
   font-size: 20px;
 }
+.email__settingLeft .check--box.Mui-checked {
+  color: #5f6368 !important;
+}
 .emailList__sections {
   display: flex;
   position: sticky;
