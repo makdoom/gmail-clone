@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./sendMail.css";
 import CloseIcon from "@material-ui/icons/Close";
 import { Button, IconButton } from "@material-ui/core";
@@ -9,12 +9,21 @@ import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import PhotoSizeSelectActualIcon from "@material-ui/icons/PhotoSizeSelectActual";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import DeleteIcon from "@material-ui/icons/Delete";
+import MinimizeIcon from "@material-ui/icons/Minimize";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
-import { closeSendMasseage } from "../../features/mail/mailSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  closeSendMasseage,
+  minimizeSendMasseage,
+  openSendMasseage,
+  selectSendMessagePopup,
+} from "../../features/mail/mailSlice";
 
 const SendMail = () => {
+  const [recipientHolder, setRecipientHolder] = useState("Recipient");
   const dispatch = useDispatch();
+  const sendMessagePopup = useSelector(selectSendMessagePopup);
+
   const {
     register,
     handleSubmit,
@@ -22,22 +31,38 @@ const SendMail = () => {
     formState: { errors },
   } = useForm();
 
+  // handle form data
   const onSubmit = (data) => {
     console.log(data);
     reset();
   };
+
   return (
-    <div className="sendMail">
+    <div
+      className={`sendMail ${sendMessagePopup === "minimize" && "minimize"}`}
+    >
       <div className="sendMail__header">
-        <h5>New Message</h5>
-        <IconButton size="small" onClick={() => dispatch(closeSendMasseage())}>
-          <CloseIcon className="close-icon" fontSize="small"></CloseIcon>
-        </IconButton>
+        <h5 onClick={() => dispatch(openSendMasseage())}>New Message</h5>
+        <div>
+          <IconButton
+            size="small"
+            onClick={() => dispatch(minimizeSendMasseage())}
+          >
+            <MinimizeIcon className="close-icon header-icon" fontSize="small" />
+          </IconButton>
+          <IconButton
+            size="small"
+            onClick={() => dispatch(closeSendMasseage())}
+          >
+            <CloseIcon className="close-icon header-icon" fontSize="small" />
+          </IconButton>
+        </div>
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           type="mail"
-          placeholder="Recipient"
+          placeholder={recipientHolder}
+          onFocus={() => setRecipientHolder("To")}
           {...register("recipient", { required: true })}
         />
         {errors.recipient && (

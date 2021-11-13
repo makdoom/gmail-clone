@@ -12,19 +12,28 @@
   flex-direction: column;
   background: #fff;
 }
+.sendMail.minimize {
+  bottom: -56% !important;
+}
 .sendMail .sendMail__header {
   background: #404040;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 10px 15px;
   color: #fff;
   font-size: 1.1rem;
 }
+.sendMail .sendMail__header > h5 {
+  flex: 1;
+}
 .sendMail .sendMail__header .close-icon {
   color: #eee;
+}
+.sendMail .sendMail__header .header-icon:hover {
+  background: #6e6e6e;
+  cursor: pointer;
 }
 .sendMail .sendmail__options {
   margin-top: 15px;

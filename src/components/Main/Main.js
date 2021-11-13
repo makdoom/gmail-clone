@@ -6,11 +6,11 @@ import "./main.css";
 import { Routes, Route } from "react-router-dom";
 import Mail from "../Mail/Mail";
 import SendMail from "../SendMail/SendMail";
-import { selectSendMessageIsOpen } from "../../features/mail/mailSlice";
+import { selectSendMessagePopup } from "../../features/mail/mailSlice";
 import { useSelector } from "react-redux";
 
 const Main = () => {
-  const sendMessageIsOpen = useSelector(selectSendMessageIsOpen);
+  const sendMessagePopup = useSelector(selectSendMessagePopup);
 
   return (
     <div className="main__container">
@@ -20,7 +20,9 @@ const Main = () => {
         <Route path="/mail" element={<Mail />} />
       </Routes>
       <SideIcon />
-      {sendMessageIsOpen && <SendMail />}
+      {(sendMessagePopup === "open" || sendMessagePopup === "minimize") && (
+        <SendMail />
+      )}
     </div>
   );
 };
