@@ -7,12 +7,18 @@ import { Avatar } from "@material-ui/core";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import AddIcon from "@material-ui/icons/Add";
 import PersonIcon from "@material-ui/icons/Person";
+import { useDispatch } from "react-redux";
+import { openSendMasseage } from "../../features/mail/mailSlice";
 
 const Sidebar = () => {
+  const dispatch = useDispatch();
   return (
     <div className="sidebar">
       <div className="sidebar__top">
-        <button className="sidebar__compose">
+        <button
+          className="sidebar__compose"
+          onClick={() => dispatch(openSendMasseage())}
+        >
           <img src="/images/add-btn.svg" alt="" />
           Compose
         </button>

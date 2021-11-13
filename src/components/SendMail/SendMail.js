@@ -10,8 +10,11 @@ import PhotoSizeSelectActualIcon from "@material-ui/icons/PhotoSizeSelectActual"
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { closeSendMasseage } from "../../features/mail/mailSlice";
 
 const SendMail = () => {
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -27,7 +30,7 @@ const SendMail = () => {
     <div className="sendMail">
       <div className="sendMail__header">
         <h5>New Message</h5>
-        <IconButton size="small">
+        <IconButton size="small" onClick={() => dispatch(closeSendMasseage())}>
           <CloseIcon className="close-icon" fontSize="small"></CloseIcon>
         </IconButton>
       </div>
