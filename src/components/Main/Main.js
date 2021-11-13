@@ -5,6 +5,7 @@ import SideIcon from "../SideIcon/SideIcon";
 import "./main.css";
 import { Routes, Route } from "react-router-dom";
 import Mail from "../Mail/Mail";
+import SendMail from "../SendMail/SendMail";
 
 const Main = () => {
   return (
@@ -15,6 +16,7 @@ const Main = () => {
         <Route path="/mail" element={<Mail />} />
       </Routes>
       <SideIcon />
+      <SendMail />
     </div>
   );
 };

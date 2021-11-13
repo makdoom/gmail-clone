@@ -1,0 +1,73 @@
+.sendMail {
+  position: absolute;
+  bottom: 0;
+  right: 60px;
+  width: 35%;
+  height: 60%;
+  max-width: 600px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  display: flex;
+  z-index: 1000;
+  flex-direction: column;
+  background: #fff;
+}
+.sendMail .sendMail__header {
+  background: #404040;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  color: #fff;
+  font-size: 1.1rem;
+}
+.sendMail .sendMail__header .close-icon {
+  color: #eee;
+}
+.sendMail .sendmail__options {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sendMail .sendMail__btn {
+  background: #3079ed !important;
+  color: #fff;
+  margin-right: 15px;
+  text-transform: capitalize;
+}
+.sendMail > form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 0 15px 15px 15px;
+}
+.sendMail > form > input {
+  height: 40px;
+  padding: 10px 0;
+  border: none;
+  width: 100%;
+  outline: none;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #e7e7e7;
+}
+.sendMail > form > textarea {
+  border: none;
+  outline: none;
+  padding: 10px 0;
+  font-family: "Roboto", sans-serif;
+}
+.sendMail__message {
+  flex: 1;
+}
+.option-btn {
+  margin-right: 0.5rem;
+}
+.sendMail__error {
+  text-align: right;
+  font-size: 0.8rem;
+  color: red;
+  padding: 2px;
+}
