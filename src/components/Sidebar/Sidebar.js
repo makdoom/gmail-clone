@@ -9,9 +9,12 @@ import AddIcon from "@material-ui/icons/Add";
 import PersonIcon from "@material-ui/icons/Person";
 import { useDispatch } from "react-redux";
 import { openSendMasseage } from "../../features/mail/mailSlice";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../features/user/userSlice";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
+  const currentUser = useSelector(selectUser);
   return (
     <div className="sidebar">
       <div className="sidebar__top">
@@ -43,9 +46,9 @@ const Sidebar = () => {
       <div className="sidebar__hangout">
         <p className="hangout__title">Hangouts</p>
         <div className="avatar__container">
-          <Avatar className="avatar__icon" />
+          <Avatar className="avatar__icon" src={currentUser?.photoURL} />
           <span>
-            Makdoom Shaikh <ArrowDropDownIcon className="icon" />
+            {currentUser?.displayName} <ArrowDropDownIcon className="icon" />
           </span>
           <AddIcon className="icon" />
         </div>

@@ -26,7 +26,7 @@ import { useSelector } from "react-redux";
 
 const Mail = () => {
   const navigate = useNavigate();
-  const { subject, title, timestamp, message } = useSelector(selectedMail);
+  const selectMail = useSelector(selectedMail);
 
   return (
     <div className="mail__container">
@@ -77,7 +77,7 @@ const Mail = () => {
       </div>
       <div className="mail__body">
         <div className="mailBody__header">
-          <p className="mail__subject">{subject}</p>
+          <p className="mail__subject">{selectMail?.subject}</p>
           <div className="leftIcons">
             <IconButton>
               <PrintIcon fontSize="small" />
@@ -92,7 +92,7 @@ const Mail = () => {
             <Avatar />
             <div className="profile__info">
               <p className="sender__email">
-                <span>{title}</span>{" "}
+                {selectMail?.title} <span>{`<${selectMail.senderEmail}>`}</span>{" "}
               </p>
               <span>
                 to me <ArrowDropDownIcon />{" "}
@@ -100,7 +100,7 @@ const Mail = () => {
             </div>
           </div>
           <div className="profile__right">
-            <p>{timestamp}</p>
+            <p>{selectMail?.timestamp}</p>
             <Checkbox
               className="star--icon"
               size="small"
@@ -115,7 +115,7 @@ const Mail = () => {
             </IconButton>
           </div>
         </div>
-        <div className="mail__message">{message}</div>
+        <div className="mail__message">{selectMail?.message}</div>
       </div>
     </div>
   );

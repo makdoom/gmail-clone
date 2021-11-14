@@ -44,7 +44,8 @@ const EmailView = () => {
         setEmails(
           snapshot.docs.map((doc) => ({
             id: doc.id,
-            title: doc.data().recipient,
+            title: doc.data().senderName,
+            senderEmail: doc.data().senderEmail,
             subject: doc.data().subject,
             message: doc.data().message,
             timestamp: doc.data().timestamp,
@@ -91,20 +92,26 @@ const EmailView = () => {
         ))}
       </div>
       <div className="emailList__area">
-        {emails &&
-          emails.map(({ id, title, subject, message, timestamp }) => (
-            <EmailRow
-              key={id}
-              title={title}
-              subject={subject}
-              description={message}
-              originalTime={timestamp ? `${timestamp.seconds}` : ""}
-              time={new Date(timestamp?.seconds * 1000).toLocaleString(
-                "en-US",
-                { hour: "numeric", minute: "numeric", hour12: true }
-              )}
-            />
-          ))}
+        {emails.length > 0 ? (
+          emails.map(
+            ({ id, title, senderEmail, subject, message, timestamp }) => (
+              <EmailRow
+                key={id}
+                title={title}
+                senderEmail={senderEmail}
+                subject={subject}
+                description={message}
+                originalTime={timestamp ? `${timestamp.seconds}` : ""}
+                time={new Date(timestamp?.seconds * 1000).toLocaleString(
+                  "en-US",
+                  { hour: "numeric", minute: "numeric", hour12: true }
+                )}
+              />
+            )
+          )
+        ) : (
+          <p className="empty__error">Your inbox is empty...!</p>
+        )}
       </div>
     </div>
   );

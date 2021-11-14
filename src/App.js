@@ -1,16 +1,44 @@
-import React from "react";
-// import { Counter } from "./features/counter/Counter";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./app.css";
 import Header from "./components/Header/Header";
+import Login from "./components/login/Login";
 import Main from "./components/Main/Main";
+import { login, logout, selectUser } from "./features/user/userSlice";
+import { auth } from "./firebase";
 
 function App() {
+  const currentUser = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        dispatch(
+          login({
+            displayName: user.displayName,
+            email: user.email,
+            photoURL: user.photoURL,
+          })
+        );
+      } else {
+        dispatch(logout());
+      }
+    });
+  }, []);
   return (
     <Router>
       <div className="app">
-        <Header />
-        <Main />
+        {!currentUser ? (
+          <Login />
+        ) : (
+          <>
+            <Header />
+            <Main />
+          </>
+        )}
       </div>
     </Router>
   );

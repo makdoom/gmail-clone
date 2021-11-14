@@ -11,7 +11,14 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { openSelectedMail } from "../../features/mail/mailSlice";
 
-const EmailRow = ({ id, title, subject, description, originalTime, time }) => {
+const EmailRow = ({
+  title,
+  senderEmail,
+  subject,
+  description,
+  originalTime,
+  time,
+}) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -22,6 +29,7 @@ const EmailRow = ({ id, title, subject, description, originalTime, time }) => {
       openSelectedMail({
         subject,
         title,
+        senderEmail,
         timestamp: `${time} - ${date}`,
         message: description,
       })

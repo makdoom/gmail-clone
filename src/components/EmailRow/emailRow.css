@@ -45,12 +45,13 @@
 .emailRow__message {
   display: flex;
   align-items: center;
-  margin-left: 5rem;
+  /* margin-left: 5rem; */
 }
 .emailRow .emailRow__title {
   width: 250px;
   font-size: 0.9rem;
   font-weight: 600;
+  text-align: left;
   letter-spacing: 0.5px;
 }
 .emailRow__message .subject {

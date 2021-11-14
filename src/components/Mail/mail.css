@@ -42,7 +42,9 @@
   font-size: 0.9rem;
 }
 .profile__left .profile__info .sender__email span {
-  font-weight: 500;
+  color: #5f6368;
+  font-size: 0.85rem;
+  font-weight: normal;
 }
 .profile__info > span {
   display: flex;

@@ -1,6 +1,17 @@
+.emailList__area {
+  text-align: center;
+}
 .email__view__container {
   /* overflow: scroll; */
   padding-left: 20px;
+}
+.empty__error {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 6px 20px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  background: #ffe48d;
 }
 .email__view__container .emailList__settings {
   position: sticky;

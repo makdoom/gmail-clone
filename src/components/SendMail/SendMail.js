@@ -20,11 +20,13 @@ import {
   selectSendMessagePopup,
 } from "../../features/mail/mailSlice";
 import { db } from "../../firebase";
+import { selectUser } from "../../features/user/userSlice";
 
 const SendMail = () => {
   const [recipientHolder, setRecipientHolder] = useState("Recipient");
   const dispatch = useDispatch();
   const sendMessagePopup = useSelector(selectSendMessagePopup);
+  const currentUser = useSelector(selectUser);
 
   // initializing react hook form
   const {
@@ -39,6 +41,8 @@ const SendMail = () => {
     db.collection("emails").add({
       recipient: data.recipient,
       subject: data.subject,
+      senderName: currentUser?.displayName,
+      senderEmail: currentUser?.email,
       message: data.message,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });

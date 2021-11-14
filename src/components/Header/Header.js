@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Avatar, IconButton } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
@@ -7,8 +7,14 @@ import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 import SettingsIcon from "@material-ui/icons/Settings";
 import AppsIcon from "@material-ui/icons/Apps";
 import "./header.css";
+import { useSelector } from "react-redux";
+import { logout, selectUser } from "../../features/user/userSlice";
+import { useDispatch } from "react-redux";
 
 const Header = () => {
+  const currentUser = useSelector(selectUser);
+  const [isLogout, setIsLogout] = useState(false);
+  const dispatch = useDispatch();
   return (
     <div className="header">
       <div className="header__left">
@@ -43,9 +49,17 @@ const Header = () => {
         <IconButton>
           <AppsIcon />
         </IconButton>
-        <IconButton>
-          <Avatar />
-        </IconButton>
+        <Avatar
+          className="avatar-icon"
+          onClick={() => setIsLogout(!isLogout)}
+          src={currentUser?.photoURL}
+        />
+
+        {isLogout && (
+          <div className="logout" onClick={() => dispatch(logout())}>
+            <p>Logout</p>
+          </div>
+        )}
       </div>
     </div>
   );
