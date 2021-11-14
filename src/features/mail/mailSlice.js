@@ -4,6 +4,7 @@ export const mailSlice = createSlice({
   name: "mail",
   initialState: {
     sendMessagePopup: "close",
+    selectedMail: null,
   },
   reducers: {
     openSendMasseage: (state) => {
@@ -15,12 +16,20 @@ export const mailSlice = createSlice({
     minimizeSendMasseage: (state) => {
       state.sendMessagePopup = "minimize";
     },
+    openSelectedMail: (state, action) => {
+      state.selectedMail = action.payload;
+    },
   },
 });
 
-export const { openSendMasseage, closeSendMasseage, minimizeSendMasseage } =
-  mailSlice.actions;
+export const {
+  openSendMasseage,
+  closeSendMasseage,
+  minimizeSendMasseage,
+  openSelectedMail,
+} = mailSlice.actions;
 
 export const selectSendMessagePopup = (state) => state.mail.sendMessagePopup;
+export const selectedMail = (state) => state.mail.selectedMail;
 
 export default mailSlice.reducer;

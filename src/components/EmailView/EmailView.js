@@ -52,7 +52,6 @@ const EmailView = () => {
         )
       );
   }, []);
-  console.log(emails);
   return (
     <div className="email__view__container">
       <div className="emailList__settings">
@@ -99,20 +98,11 @@ const EmailView = () => {
               title={title}
               subject={subject}
               description={message}
-              time={
-                timestamp
-                  ? `${
-                      timestamp &&
-                      timestamp
-                        .toDate()
-                        .toLocaleString("default", { month: "short" })
-                    } ${timestamp.toDate().getDate()}`
-                  : ""
-              }
-              // time={`${
-              //   timestamp &&
-              //   timestamp.toDate().toLocaleString("default", { month: "short" })
-              // } ${timestamp.toDate().getDate()}`}
+              originalTime={`${timestamp.seconds}`}
+              time={new Date(timestamp?.seconds * 1000).toLocaleString(
+                "en-US",
+                { hour: "numeric", minute: "numeric", hour12: true }
+              )}
             />
           ))}
       </div>

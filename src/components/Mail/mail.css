@@ -42,8 +42,7 @@
   font-size: 0.9rem;
 }
 .profile__left .profile__info .sender__email span {
-  color: #5f6368;
-  font-weight: normal;
+  font-weight: 500;
 }
 .profile__info > span {
   display: flex;
@@ -56,7 +55,7 @@
   align-items: center;
 }
 .profile__right > p {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: #5f6368;
   margin-right: 0.5rem;
 }

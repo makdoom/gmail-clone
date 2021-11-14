@@ -21,9 +21,12 @@ import StarIcon from "@material-ui/icons/Star";
 import ReplyIcon from "@material-ui/icons/Reply";
 import "./mail.css";
 import { useNavigate } from "react-router-dom";
+import { selectedMail } from "../../features/mail/mailSlice";
+import { useSelector } from "react-redux";
 
 const Mail = () => {
   const navigate = useNavigate();
+  const { subject, title, timestamp, message } = useSelector(selectedMail);
 
   return (
     <div className="mail__container">
@@ -74,7 +77,7 @@ const Mail = () => {
       </div>
       <div className="mail__body">
         <div className="mailBody__header">
-          <p className="mail__subject">Subject goes here...</p>
+          <p className="mail__subject">{subject}</p>
           <div className="leftIcons">
             <IconButton>
               <PrintIcon fontSize="small" />
@@ -89,7 +92,7 @@ const Mail = () => {
             <Avatar />
             <div className="profile__info">
               <p className="sender__email">
-                Spotify <span>spotify@gamil.com</span>{" "}
+                <span>{title}</span>{" "}
               </p>
               <span>
                 to me <ArrowDropDownIcon />{" "}
@@ -97,7 +100,7 @@ const Mail = () => {
             </div>
           </div>
           <div className="profile__right">
-            <p>Nov 12, 2021, 10:25 AM</p>
+            <p>{timestamp}</p>
             <Checkbox
               className="star--icon"
               size="small"
@@ -112,7 +115,7 @@ const Mail = () => {
             </IconButton>
           </div>
         </div>
-        <div className="mail__message">lorem2000</div>
+        <div className="mail__message">{message}</div>
       </div>
     </div>
   );
