@@ -30,6 +30,7 @@ export const SidebarItemsOptions = [
   {
     icon: SendIcon,
     title: "Sent",
+    numbers: "10",
   },
   {
     icon: InsertDriveFileIcon,

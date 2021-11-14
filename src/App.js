@@ -27,7 +27,7 @@ function App() {
         dispatch(logout());
       }
     });
-  }, []);
+  }, [dispatch]);
   return (
     <Router>
       <div className="app">

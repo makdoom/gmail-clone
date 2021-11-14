@@ -4,11 +4,11 @@ import "./sidebarOption.css";
 const SidebarOption = ({ Icon, number, title, isActive }) => {
   return (
     <div className="sidebar__option_container">
-      <a className={`sidebar__option ${isActive && "active"}`} href="/">
+      <p className={`sidebar__option ${isActive && "active"}`}>
         <Icon className="icon" />
         <p className="title">{title}</p>
         <p className="number">{number}</p>
-      </a>
+      </p>
     </div>
   );
 };

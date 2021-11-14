@@ -110,7 +110,9 @@ const EmailView = () => {
             )
           )
         ) : (
-          <p className="empty__error">Your inbox is empty...!</p>
+          <div>
+            <p className="empty__error">Your inbox is empty...!</p>
+          </div>
         )}
       </div>
     </div>
