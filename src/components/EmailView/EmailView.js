@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./emailView.css";
 import { Checkbox, IconButton } from "@material-ui/core";
 import InboxIcon from "@material-ui/icons/Inbox";
@@ -12,8 +12,10 @@ import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import KeyboardHideIcon from "@material-ui/icons/KeyboardHide";
 import EmailSection from "../EmailSection/EmailSection";
 import EmailRow from "../EmailRow/EmailRow";
+import { db } from "../../firebase";
 
 const EmailView = () => {
+  const [emails, setEmails] = useState([]);
   const emailSections = [
     {
       icon: InboxIcon,
@@ -34,6 +36,23 @@ const EmailView = () => {
       isSelected: false,
     },
   ];
+
+  useEffect(() => {
+    db.collection("emails")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) =>
+        setEmails(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            title: doc.data().recipient,
+            subject: doc.data().subject,
+            message: doc.data().message,
+            timestamp: doc.data().timestamp,
+          }))
+        )
+      );
+  }, []);
+  console.log(emails);
   return (
     <div className="email__view__container">
       <div className="emailList__settings">
@@ -73,18 +92,29 @@ const EmailView = () => {
         ))}
       </div>
       <div className="emailList__area">
-        <EmailRow
-          title="First Mail"
-          subject="Testing mail"
-          description="This is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first email"
-          time="Nov 10"
-        />
-        <EmailRow
-          title="First Mail"
-          subject="Testing mail"
-          description="This is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first emailThis is first email"
-          time="Nov 10"
-        />
+        {emails &&
+          emails.map(({ id, title, subject, message, timestamp }) => (
+            <EmailRow
+              key={id}
+              title={title}
+              subject={subject}
+              description={message}
+              time={
+                timestamp
+                  ? `${
+                      timestamp &&
+                      timestamp
+                        .toDate()
+                        .toLocaleString("default", { month: "short" })
+                    } ${timestamp.toDate().getDate()}`
+                  : ""
+              }
+              // time={`${
+              //   timestamp &&
+              //   timestamp.toDate().toLocaleString("default", { month: "short" })
+              // } ${timestamp.toDate().getDate()}`}
+            />
+          ))}
       </div>
     </div>
   );

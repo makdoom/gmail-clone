@@ -19,7 +19,7 @@ const Sidebar = () => {
           className="sidebar__compose"
           onClick={() => dispatch(openSendMasseage())}
         >
-          <img src="/images/add-btn.svg" alt="" />
+          <object data="/images/add-btn.svg" aria-labelledby="compose"></object>
           Compose
         </button>
       </div>

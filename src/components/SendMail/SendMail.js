@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./sendMail.css";
+import firebase from "firebase";
 import CloseIcon from "@material-ui/icons/Close";
 import { Button, IconButton } from "@material-ui/core";
 import FormatColorTextIcon from "@material-ui/icons/FormatColorText";
@@ -18,12 +19,14 @@ import {
   openSendMasseage,
   selectSendMessagePopup,
 } from "../../features/mail/mailSlice";
+import { db } from "../../firebase";
 
 const SendMail = () => {
   const [recipientHolder, setRecipientHolder] = useState("Recipient");
   const dispatch = useDispatch();
   const sendMessagePopup = useSelector(selectSendMessagePopup);
 
+  // initializing react hook form
   const {
     register,
     handleSubmit,
@@ -33,8 +36,15 @@ const SendMail = () => {
 
   // handle form data
   const onSubmit = (data) => {
+    db.collection("emails").add({
+      recipient: data.recipient,
+      subject: data.subject,
+      message: data.message,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
     console.log(data);
     reset();
+    dispatch(closeSendMasseage());
   };
 
   return (

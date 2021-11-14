@@ -19,7 +19,7 @@
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   cursor: pointer;
 }
-.sidebar__compose img {
+.sidebar__compose object {
   width: 25px;
   margin-right: 0.4rem;
 }
