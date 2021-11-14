@@ -10,6 +10,7 @@
   position: relative;
 }
 .emailRow:hover {
+  transform: scale(1.005);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 2px 10px;
 }
 .emailRow:hover .emailRow__options .star--icon {
@@ -30,6 +31,8 @@
 }
 .emailRow .email__info {
   display: flex;
+  align-items: center;
+  height: 100%;
   width: 100%;
 }
 .emailRow__options {
@@ -55,7 +58,7 @@
   font-weight: 600;
   letter-spacing: 0.4px;
   width: 100%;
-  max-width: 1100px;
+  max-width: 900px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

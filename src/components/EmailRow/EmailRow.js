@@ -7,7 +7,6 @@ import ArchiveIcon from "@material-ui/icons/Archive";
 import DeleteIcon from "@material-ui/icons/Delete";
 import StarOutlineIcon from "@material-ui/icons/StarOutline";
 import StarIcon from "@material-ui/icons/Star";
-
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { openSelectedMail } from "../../features/mail/mailSlice";

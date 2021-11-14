@@ -98,7 +98,7 @@ const EmailView = () => {
               title={title}
               subject={subject}
               description={message}
-              originalTime={`${timestamp.seconds}`}
+              originalTime={timestamp ? `${timestamp.seconds}` : ""}
               time={new Date(timestamp?.seconds * 1000).toLocaleString(
                 "en-US",
                 { hour: "numeric", minute: "numeric", hour12: true }
